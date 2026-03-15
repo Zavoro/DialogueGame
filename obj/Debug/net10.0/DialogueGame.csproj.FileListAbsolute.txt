@@ -1,0 +1,14 @@
+C:\Users\New PC\source\repos\DialogueGame\bin\Debug\net10.0\DialogueGame.exe
+C:\Users\New PC\source\repos\DialogueGame\bin\Debug\net10.0\DialogueGame.deps.json
+C:\Users\New PC\source\repos\DialogueGame\bin\Debug\net10.0\DialogueGame.runtimeconfig.json
+C:\Users\New PC\source\repos\DialogueGame\bin\Debug\net10.0\DialogueGame.dll
+C:\Users\New PC\source\repos\DialogueGame\bin\Debug\net10.0\DialogueGame.pdb
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.AssemblyInfoInputs.cache
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.AssemblyInfo.cs
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.csproj.CoreCompileInputs.cache
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.dll
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\refint\DialogueGame.dll
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.pdb
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\DialogueGame.genruntimeconfig.cache
+C:\Users\New PC\source\repos\DialogueGame\obj\Debug\net10.0\ref\DialogueGame.dll
