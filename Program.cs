@@ -8,8 +8,8 @@
     Console.WriteLine();
 }
 // DEBUGGING
-// True = skip | False = don't skip
-bool skipIntro = false;
+// true = skip | false = don't skip
+bool skipIntro = true;
 
 if  (!skipIntro)
 {
@@ -34,8 +34,7 @@ void Intro()
     Thread.Sleep(1500);
 }
 
-
-void ChoiceScene()
+        void ChoiceScene()
 {
     while (true)
     {
@@ -43,32 +42,34 @@ void ChoiceScene()
 2. Where am i?
 3. Stay Silent.
            ");
-        string choice = Console.ReadLine();
+        string choice = Console.ReadLine().ToLower().Trim();
         switch (choice)
         {
             case "1":
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("Don't worry who I am, just know that i mean no danger.");
-                break;
+                        return;
+
             case "2":
                  Console.Clear();
                  Thread.Sleep(500);
                  TypeText("Well i don't know how you got here, this place is quite far into the woods.");
-                 break;
+                        return;
 
             case "3":
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("You're probably wondering where we are, we're quite far into the woods.");
-                break;
+                        return;
+
             default:
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("hm?");
                 Thread.Sleep(2000);
                 Console.Clear();
-                break;
+                        break;
 
         }
     }
