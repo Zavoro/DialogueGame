@@ -44,34 +44,32 @@ void ChoiceScene()
 3. Stay Silent.
            ");
         string choice = Console.ReadLine();
-        if (choice == "1")
+        switch (choice)
         {
-            Console.Clear();
-            Thread.Sleep(500);
-            TypeText("Don't worry who I am, just know that i mean no danger.");
-            break;
-        }
-        else if (choice == "2")
-        {
-            Console.Clear();
-            Thread.Sleep(500);
-            TypeText("Well i don't know how you got here, this place is quite far into the woods.");
-            break;
-        }
-        else if (choice == "3")
-        {
-            Console.Clear();
-            Thread.Sleep(500);
-            TypeText("You're probably wondering where we are, we're quite far into the woods.");
-            break;
-        }
-        else
-        {
-            Console.Clear();
-            Thread.Sleep(500);
-            TypeText("hm?");
-            Thread.Sleep(2000);
-            Console.Clear();
+            case "1":
+                Console.Clear();
+                Thread.Sleep(500);
+                TypeText("Don't worry who I am, just know that i mean no danger.");
+                break;
+            case "2":
+                 Console.Clear();
+                 Thread.Sleep(500);
+                 TypeText("Well i don't know how you got here, this place is quite far into the woods.");
+                 break;
+
+            case "3":
+                Console.Clear();
+                Thread.Sleep(500);
+                TypeText("You're probably wondering where we are, we're quite far into the woods.");
+                break;
+            default:
+                Console.Clear();
+                Thread.Sleep(500);
+                TypeText("hm?");
+                Thread.Sleep(2000);
+                Console.Clear();
+                break;
+
         }
     }
 
