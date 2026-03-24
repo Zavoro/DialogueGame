@@ -1,4 +1,6 @@
-﻿void TypeText(string text)
+﻿using DialogueGame;
+
+void TypeText(string text)
 {
     foreach (char c in text)
     {
@@ -7,9 +9,19 @@
     }
     Console.WriteLine();
 }
+// ask for the name
+// store it
+// create the player
+TypeText("what is your name?");
+string name = Console.ReadLine();
+Player user = new Player(name);
+Thread.Sleep(50);
+Console.Clear();
+Thread.Sleep(250);
+
 // DEBUGGING
 // true = skip | false = don't skip
-bool skipIntro = true;
+bool skipIntro = false;
 
 if  (!skipIntro)
 {
@@ -30,7 +42,7 @@ void Intro()
     TypeText("Hello..?");
     Thread.Sleep(2500);
     Console.Clear();
-    TypeText("Your vision starts to clear up, you see a hooded man in front of you");
+    TypeText("Your vision starts to clear, you see a hooded man in front of you");
     Thread.Sleep(1500);
 }
 
