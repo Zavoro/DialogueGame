@@ -19,11 +19,17 @@ Thread.Sleep(50);
 Console.Clear();
 Thread.Sleep(250);
 
+//declare darkRoom object of the Scene class
+Scene darkRoom = new Scene("The room is dark.");
+
+//declare mozaicRoom object of the Scene class
+Scene mozaicRoom = new Scene("The room has a marble floor with a beautiful mozaic barely visible under candle-light");
+
 // DEBUGGING
 // true = skip | false = don't skip
-bool skipIntro = false;
+bool skipIntro = true;
 
-if  (!skipIntro)
+if (!skipIntro)
 {
     Intro();
 }
@@ -33,7 +39,10 @@ ChoiceScene();
 void Intro()
 {
     Thread.Sleep(1000);
-    TypeText("You wake up in a dark room, you can't remember how you got here");
+    TypeText("You wake up, you can't remember how you got here");
+    Thread.Sleep(1000);
+    Console.Clear();
+    TypeText(darkRoom.Description);
     Thread.Sleep(2500);
     Console.Clear();
     TypeText("Hello?");
@@ -46,7 +55,7 @@ void Intro()
     Thread.Sleep(1500);
 }
 
-        void ChoiceScene()
+void ChoiceScene()
 {
     while (true)
     {
@@ -61,19 +70,22 @@ void Intro()
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("Don't worry who I am, just know that i mean no danger.");
-                        return;
+                mozaicLevel();
+                return;
 
             case "2":
-                 Console.Clear();
-                 Thread.Sleep(500);
-                 TypeText("Well i don't know how you got here, this place is quite far into the woods.");
-                        return;
+                Console.Clear();
+                Thread.Sleep(500);
+                TypeText("Well i don't know how you got here, this place is quite far into the woods.");
+                mozaicLevel();
+                return;
 
             case "3":
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("You're probably wondering where we are, we're quite far into the woods.");
-                        return;
+                mozaicLevel();
+                return;
 
             default:
                 Console.Clear();
@@ -81,11 +93,23 @@ void Intro()
                 TypeText("hm?");
                 Thread.Sleep(2000);
                 Console.Clear();
-                        break;
+                break;
 
         }
     }
+}
 
+void mozaicLevel()
+{
+    Thread.Sleep(1000);
+    Console.Clear();
+    TypeText("The old man starts to walk down the hallway");
+    Thread.Sleep(500);
+    Console.Clear();
+    TypeText("You decide to follow him through a doorway");
+    Thread.Sleep(500);
+    Console.Clear();
+    TypeText(mozaicRoom.Description);
 }
 
 
