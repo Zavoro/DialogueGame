@@ -19,11 +19,23 @@ Thread.Sleep(50);
 Console.Clear();
 Thread.Sleep(250);
 
+//darkRoomChoices List
+List<string> darkRoomChoices = new List<string>
+{
+ "1. Who are you?",
+ "2. Where am I?",
+ "3. Stay silent."
+};
+
+
 //declare darkRoom object of the Scene class
-Scene darkRoom = new Scene("The room is dark.");
+Scene darkRoomScene = new Scene("The room is dark.", darkRoomChoices);
+
+//mozaicRoomChoices Choices List
+List<string> mozaicRoomChoices = new List<string>();
 
 //declare mozaicRoom object of the Scene class
-Scene mozaicRoom = new Scene("The room has a marble floor with a beautiful mozaic barely visible under candle-light");
+Scene mozaicRoom = new Scene("The room has a marble floor with a beautiful mozaic barely visible under candle-light", mozaicRoomChoices);
 
 // DEBUGGING
 // true = skip | false = don't skip
@@ -31,18 +43,18 @@ bool skipIntro = true;
 
 if (!skipIntro)
 {
-    Intro();
+    darkRoomLevel();
 }
 //jump straight to choice scene
-ChoiceScene();
+ChoiceScene(darkRoomScene);
 
-void Intro()
+void darkRoomLevel()
 {
     Thread.Sleep(1000);
     TypeText("You wake up, you can't remember how you got here");
     Thread.Sleep(1000);
     Console.Clear();
-    TypeText(darkRoom.Description);
+    TypeText(darkRoomScene.Description);
     Thread.Sleep(2500);
     Console.Clear();
     TypeText("Hello?");
@@ -55,14 +67,14 @@ void Intro()
     Thread.Sleep(1500);
 }
 
-void ChoiceScene()
+void ChoiceScene(Scene scene)
 {
     while (true)
     {
-        TypeText(@"1. Who are you?
-2. Where am i?
-3. Stay Silent.
-           ");
+        foreach (string a in scene.Choices)
+        {
+            TypeText(a);
+        }
         string choice = Console.ReadLine().ToLower().Trim();
         switch (choice)
         {
