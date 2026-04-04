@@ -7,10 +7,13 @@ namespace DialogueGame
     public class Scene
     {
         public string Description { get; set; }
-
-        public Scene(string room)
+        public List<string> Choices { get; set; }
+        public Scene(string room, List<string> Choices)
         {
             this.Description = room;
+            this.Choices = Choices;
         }
+
+        
     }
 }
