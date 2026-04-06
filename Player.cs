@@ -8,7 +8,17 @@ namespace DialogueGame
     {
         string name = "Unknown";
         int health = 100;
-        //inventory - to be implemented in Issue #6  
+        List<string> inventory = new List<string>();
+
+        public void AddItem(string item)
+        {
+            inventory.Add(item);
+        }
+
+        public bool HasItem(string item)
+        {
+            return inventory.Contains(item);
+        }
 
         public Player(string name)
         {
