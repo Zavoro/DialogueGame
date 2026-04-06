@@ -50,21 +50,31 @@ ChoiceScene(darkRoomScene);
 
 void darkRoomLevel()
 {
-    Thread.Sleep(1000);
-    TypeText("You wake up, you can't remember how you got here");
-    Thread.Sleep(1000);
-    Console.Clear();
-    TypeText(darkRoomScene.Description);
-    Thread.Sleep(2500);
-    Console.Clear();
-    TypeText("Hello?");
-    Thread.Sleep(2500);
-    Console.Clear();
-    TypeText("Hello..?");
-    Thread.Sleep(2500);
-    Console.Clear();
-    TypeText("Your vision starts to clear, you see a hooded man in front of you");
-    Thread.Sleep(1500);
+    if (!user.HasItem("Candle"))
+        {
+        Thread.Sleep(1000);
+        TypeText("You wake up, you can't remember how you got here");
+        Thread.Sleep(1000);
+        Console.Clear();
+        TypeText(darkRoomScene.Description);
+        Thread.Sleep(2500);
+        Console.Clear();
+        TypeText("Hello?");
+        Thread.Sleep(2500);
+        Console.Clear();
+        TypeText("Hello..?");
+        Thread.Sleep(2500);
+        Console.Clear();
+        TypeText("Your vision starts to clear, you see a hooded man in front of you");
+        Thread.Sleep(1500);
+        }
+
+    else
+        {
+        Thread.Sleep(1000);
+        TypeText("You walk back into the dark room, your candle gives some light");
+        }
+    
 }
 
 void ChoiceScene(Scene scene)
@@ -122,7 +132,20 @@ void mozaicLevel()
     Thread.Sleep(500);
     Console.Clear();
     TypeText(mozaicRoom.Description);
+    Thread.Sleep(1000);
+    Console.Clear();
+    TypeText("There is a lit candle at the doorway, this could be useful.");
+    Thread.Sleep(1000);
+    Console.Clear();
+    user.AddItem("Candle");
+    TypeText("You pick up the candle");
+    Thread.Sleep(1000);
+    Console.Clear();
+    //debug candle item pickup
+    //Console.WriteLine(user.HasItem("Candle"));
 }
+
+darkRoomLevel();
 
 
 
