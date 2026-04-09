@@ -92,6 +92,7 @@ void ChoiceScene(Scene scene)
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("Don't worry who I am, just know that i mean no danger.");
+                user.RecordDecision(DecisionsMade.QuestionedMan);
                 mozaicLevel();
                 return;
 
@@ -99,6 +100,7 @@ void ChoiceScene(Scene scene)
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("Well i don't know how you got here, this place is quite far into the woods.");
+                user.RecordDecision(DecisionsMade.QuestionedMan);
                 mozaicLevel();
                 return;
 
@@ -106,6 +108,7 @@ void ChoiceScene(Scene scene)
                 Console.Clear();
                 Thread.Sleep(500);
                 TypeText("You're probably wondering where we are, we're quite far into the woods.");
+                user.RecordDecision(DecisionsMade.StayedSilent);
                 mozaicLevel();
                 return;
 
@@ -123,6 +126,23 @@ void ChoiceScene(Scene scene)
 
 void mozaicLevel()
 {
+    
+    if (user.CheckDecision(DecisionsMade.QuestionedMan))
+    {
+        TypeText("You're quite a curious one.");
+
+        //DEBUG CHECK DECISION LOGGING 
+        //Console.WriteLine(DecisionsMade.QuestionedMan);
+    }
+
+    if (user.CheckDecision(DecisionsMade.StayedSilent))
+    {
+        TypeText("You seem to be a quiet person");
+
+        //DEBUG CHECK DECISION LOGGING
+        //Console.WriteLine(DecisionsMade.StayedSilent);
+    }
+
     Thread.Sleep(1000);
     Console.Clear();
     TypeText("The old man starts to walk down the hallway");
